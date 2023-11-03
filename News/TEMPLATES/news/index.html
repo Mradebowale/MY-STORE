@@ -1,0 +1,46 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BBC NEWS| HOMEPAGE</title>
+    <style>
+        body {
+            background-color: cream;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #336699;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navigation {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin: 10px;
+            color: #333;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to BBC NEWS</h1>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'news' %}">All News</a>
+        <a href="single_news.html">Single news</a>
+        <a href="create.html">create</a>
+        <a href="{%url 'contact' %}">Contact Us</a>
+    </div>
+    <br>
+</body>
+</html>
