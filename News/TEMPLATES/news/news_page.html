@@ -32,16 +32,15 @@
     </style>
 </head>
 <body>
-    <div>
-        {% for News in all_News %}
-        <!-- <h2> <a> href= "{% url 'detail' product.id %}" </a> </h2> -->
-        <a href="{% url 'detail' News.id %}"><h2>{{ News.Headline }}</h2> </a>
-        <h3>{{ News.Content }}</h3>
-        <h4> {{ News.Reporter }}</h4>
-        <img src="{{ News.image.url }}" alt=" ">
-        
-        <br>
-
-        {% endfor %}
+    <div class="header">
+        <a href="/"><h1>CURRENT NEWS</h1></a>
+    </div>
+    <p>{% for News in News_list %}</p>
+   <a href="{%url 'single' News.id%}">{{News.Headline}}</a> 
+   <p>{{News.date_reported}}</p>
+    <br>
+    {% endfor %}
+    <p><a href="{%url 'contact' %}">CONTACT US</a></p>
+    <br>
 </body>
 </html>

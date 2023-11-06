@@ -1,11 +1,51 @@
+{%load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BBC NEWS| CREATE</title>
+    <style>
+        body {
+            background-color: cream;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #336699;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .navigation {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        .navigation a {
+            text-decoration: none;
+            margin: 10px;
+            color: #333;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="header">
+       <a href="/"><h1>SINGLE NEWS</h1></a> 
+    </div>
+    <P><h3>{{news.Headline}}</h3></P>
+   <p><img src="{{news.images.url}}" alt="Images"></p>
+    <p>{{news.Content}}</p>
+    <p>{{news.date_reported}}</p>
+        {{news.Reporter}}
+    <br>
 </body>
 </html>
+
+
+
+
+
+

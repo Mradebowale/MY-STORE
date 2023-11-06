@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import News
 from .forms import NewsForm
@@ -16,8 +16,8 @@ def all_News(request):
 
 
 def single_news(request, news_id):
-    news = News.objects.get(id=news_id)
-    context = {'news': news}
+    current_news = News.objects.get(id=news_id)
+    context = {'news': current_news}
     return render(request, 'news/single_news.html', context)
 
 
@@ -27,7 +27,7 @@ def create_news(request):
         form = NewsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('all_News')
+            return redirect('news')
         else:
             return HttpResponse("Something isn't right")
     else:

@@ -25,7 +25,7 @@ urlpatterns = [
     path('', Homepage),
     path('news/', all_News, name='news'),
     path('<int:news_id>/', single_news, name='single'),
-    path("create/", create_news, name='create'),
+    path('create/', create_news, name='create'),
     path('contact/', Contactpage, name='contact')
     
 ]
